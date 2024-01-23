@@ -40,7 +40,6 @@ def draw_order(x, y, side, level):
     draw_order(right, bottom, nside, level - 1)
 
 
-
 def draw_right(x, y, side, level):
     # raise NotImplementedError
     if level < 1:
