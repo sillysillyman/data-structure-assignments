@@ -24,9 +24,11 @@ def palindrome(s):
 
 def bin_log(n):
     # raise NotImplementedError
-    import math
-
-    return int(math.log(n, 2))
+    if n <= 1:
+        return 0
+    elif n == 2:
+        return 1
+    return 1 + bin_log(n // 2)
 
 
 if __name__ == "__main__":
