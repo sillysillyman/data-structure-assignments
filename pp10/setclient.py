@@ -3,11 +3,12 @@
 #
 
 from ibst import Set
-#from solution import Set
+
+# from solution import Set
 
 a = Set()
 for el in [13, 9, 2, 99, 12, 88, 55, 57]:
-  a = a + el
+    a = a + el
 
 print("a = %s" % a)
 
@@ -57,4 +58,3 @@ print("After a1, a2 = a.split(99) we have:")
 print("a = %s" % a)
 print("a1 = %s" % a1)
 print("a2 = %s" % a2)
-

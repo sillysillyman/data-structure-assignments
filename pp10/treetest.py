@@ -5,8 +5,9 @@
 # Select here which implementation you want to use:
 # Old one:
 import bst
+
 # New one
-#import nrbst as bst
+# import nrbst as bst
 
 d = bst.dict()
 
@@ -50,10 +51,9 @@ print("Now testing an unbalanced insertion order:")
 e = bst.dict()
 n = 1010
 for i in range(1, n):
-  e[i] = str(i)
+    e[i] = str(i)
 
 print("First key is %s" % e.firstkey())
 print("Last key is %s" % e.lastkey())
 
-del e[n//2]
-
+del e[n // 2]

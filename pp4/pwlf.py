@@ -10,14 +10,17 @@ class PieceWiseLinear(object):
     def __init__(self, x0, y0, x1, y1):
         if x1 <= x0:
             raise ValueError("x1 must be larger than x0")
-        raise NotImplementedError
+        # raise NotImplementedError
+        self.points = [(x0, y0), (x1, y1)]
 
     def domain(self):
         """Return domain interval as a pair."""
-        raise NotImplementedError
+        # raise NotImplementedError
+        return (self.points[0][0], self.points[-1][0])
 
     def __str__(self):
-        raise NotImplementedError
+        # raise NotImplementedError
+        return "..".join(f"({x},{y})" for x, y in self.points)
 
     def __call__(self, x):
         """Evaluate this function at x-coordinate x."""

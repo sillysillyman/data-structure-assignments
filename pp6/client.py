@@ -1,28 +1,32 @@
-
-#from doublylinkedlist import DoublyLinkedList
+# from doublylinkedlist import DoublyLinkedList
 from solution import DoublyLinkedList
 
+
 def make(*els):
-  a = DoublyLinkedList()
-  for e in els:
-    a.append(e)
-  return a
+    a = DoublyLinkedList()
+    for e in els:
+        a.append(e)
+    return a
+
 
 def check(name, a, ref):
-  correct = "Correct" if str(a) == ref else "INCORRECT!!"
-  print("%s = %s %s" % (name, str(a), correct))
+    correct = "Correct" if str(a) == ref else "INCORRECT!!"
+    print("%s = %s %s" % (name, str(a), correct))
+
 
 def checkNode(text, n, ref):
-  correct = "Correct" if n == ref else "INCORRECT!!"
-  print("%s = %s %s" % (text, str(n), correct))
+    correct = "Correct" if n == ref else "INCORRECT!!"
+    print("%s = %s %s" % (text, str(n), correct))
+
 
 a = make(1, 3, 5, 7, 9, 11, 3, 9, 3, 11, 7, 11, 13, 5)
 check("a", a, "[1, 3, 5, 7, 9, 11, 3, 9, 3, 11, 7, 11, 13, 5]")
 
 checkNode("a.find_first(3)", a.find_first(3), a.first().next)
 checkNode("a.find_first(9)", a.find_first(9), a.first().next.next.next.next)
-checkNode("a.find_last(3)", a.find_last(3), 
-          a.first().next.next.next.next.next.next.next.next)
+checkNode(
+    "a.find_last(3)", a.find_last(3), a.first().next.next.next.next.next.next.next.next
+)
 checkNode("a.find_last(11)", a.find_last(11), a.last().prev.prev)
 checkNode("a.find_first(27)", a.find_first(27), None)
 checkNode("a.find_last(81)", a.find_last(81), None)
