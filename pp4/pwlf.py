@@ -27,7 +27,12 @@ class PieceWiseLinear(object):
         d = self.domain()
         if x < d[0] or x > d[1]:
             raise ValueError("argument is not in domain")
-        raise NotImplementedError
+        # raise NotImplementedError
+        for i in range(len(self.points) - 1):
+            if self.points[i][0] <= x <= self.points[i + 1][0]:
+                x0, y0 = self.points[i]
+                x1, y1 = self.points[i + 1]
+                return ((y1 - y0) / (x1 - x0)) * (x - x0) + y0
 
     def join(self, rhs):
         """Join two piecewise linear functions."""
